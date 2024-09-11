@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e3b7194-5eaf-43c4-9312-a7d05834e52c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/RAG/rag_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/RAG/rag_demo.py" afterDir="false" />
-    </list>
+    <list default="true" id="3e3b7194-5eaf-43c4-9312-a7d05834e52c" name="Changes" comment="RAG" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,6 +67,15 @@
       <option name="presentableId" value="Default" />
       <updated>1725718899059</updated>
     </task>
+    <task id="LOCAL-00001" summary="RAG">
+      <option name="closed" value="true" />
+      <created>1726068733455</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1726068733455</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -81,5 +88,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="RAG" />
+    <option name="LAST_COMMIT_MESSAGE" value="RAG" />
   </component>
 </project>
