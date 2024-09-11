@@ -2,14 +2,15 @@ import base64
 
 from langchain_community.chat_models import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
-import streamlit as st
 
 
-def encode_image(image_file):
-    return base64.b64encode(image_file.read()).decode()
+def encode_image(image_path):
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode()
 
 
 llm = ChatOllama(model="mistral")
+image = encode_image("airport_terminal_journey.jpeg")
 prompt = ChatPromptTemplate.from_messages(
     [
         ("system", "You are a helpful assistant that can describe images."),
@@ -20,7 +21,7 @@ prompt = ChatPromptTemplate.from_messages(
                 {
                     "type": "image_url",
                     "image_url": {
-                        "url": f"data:image/jpeg;base64,""{image}",
+                        "url": f"data:image/jpeg;base64,{image}",
                         "detail": "low",
                     },
                 },
@@ -30,11 +31,6 @@ prompt = ChatPromptTemplate.from_messages(
 )
 
 chain = prompt | llm
+response = chain.invoke({"input": "Explain"})
 
-uploaded_file = st.file_uploader("Upload your image: ", type=["jpg", "png"])
-question = st.text_input("Enter a question: ")
-
-if question:
-    image = encode_image(uploaded_file)
-    response = chain.invoke({"input": question, "image": image})
-    st.write(response.content)
+print(response.content)

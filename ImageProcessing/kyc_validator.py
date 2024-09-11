@@ -12,11 +12,13 @@ def encode_image(image_file):
 llm = ChatOllama(model="mistral")
 prompt = ChatPromptTemplate.from_messages(
     [
-        ("system", "You are a helpful assistant that can describe images."),
+        ("system", "You are a helpful assistant that can verify identification documents."),
         (
             "human",
             [
-                {"type": "text", "text": "{input}"},
+                {"type": "text", "text": "Verify identification details"},
+                {"type": "text", "text": "Name: {user_name}"},
+                {"type": "text", "text": "DOB: {user_dob}"},
                 {
                     "type": "image_url",
                     "image_url": {
@@ -31,10 +33,14 @@ prompt = ChatPromptTemplate.from_messages(
 
 chain = prompt | llm
 
-uploaded_file = st.file_uploader("Upload your image: ", type=["jpg", "png"])
-question = st.text_input("Enter a question: ")
+st.title("KYC Verification!")
 
-if question:
+uploaded_file = st.file_uploader("Upload your document: ", type=["jpg", "png", "jpeg"])
+
+user_name = st.text_input("Enter your name: ")
+user_dob = st.text_input("Enter your date of birth: ")
+
+if uploaded_file is not None and user_dob and user_name:
     image = encode_image(uploaded_file)
-    response = chain.invoke({"input": question, "image": image})
+    response = chain.invoke({"user_name": user_name, "user_dob": user_dob, "image": image})
     st.write(response.content)
