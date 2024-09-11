@@ -18,6 +18,7 @@ embeddings = HuggingFaceInferenceAPIEmbeddings(
     api_key=HF_API_KEY,
     model_name="sentence-transformers/all-MiniLM-l6-v2"
 )
+
 prompt_template = ChatPromptTemplate.from_messages(
     [
         ("system", """
