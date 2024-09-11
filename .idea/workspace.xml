@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3e3b7194-5eaf-43c4-9312-a7d05834e52c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/LangchainBasics.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Basics/mistral.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Basics/openAIDemo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Basics/webapp_mistral.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chains/sequential_chain.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chains/simple_sequential_chain.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatHistory/chat_history.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatHistory/chat_prompt_template.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PromptTemplates/prompt_template.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PromptTemplates/travel_guide.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RAG/rag_demo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RAG/rag_pdf.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embeddings/embeddings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embeddings/job_search_helper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embeddings/similarity_finder.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2lkKzhKT9pKw1Csk22IaiT4oa5M" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.chat_history.executor&quot;: &quot;Run&quot;,
+    &quot;Python.embeddings.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gemmaAI.executor&quot;: &quot;Run&quot;,
+    &quot;Python.job_search_helper.executor&quot;: &quot;Run&quot;,
+    &quot;Python.rag_demo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.similarity_finder.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/RAG" />
+      <recent name="$PROJECT_DIR$/ChatHistory" />
+      <recent name="$PROJECT_DIR$/PromptTemplates" />
+      <recent name="$PROJECT_DIR$/embeddings" />
+      <recent name="$PROJECT_DIR$/Chains" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-babbdf50b680-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.15989.155" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e3b7194-5eaf-43c4-9312-a7d05834e52c" name="Changes" comment="" />
+      <created>1725718899059</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1725718899059</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
