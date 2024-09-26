@@ -1,14 +1,11 @@
 import streamlit as st
 from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain.chains.conversational_retrieval.base import ConversationalRetrievalChain
 from langchain.chains.history_aware_retriever import create_history_aware_retriever
 from langchain.chains.retrieval import create_retrieval_chain
-from langchain.memory import ConversationBufferMemory
 from langchain_chroma import Chroma
 from langchain_community.chat_models import ChatOllama
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_core.messages import HumanMessage, AIMessage
-from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_ollama import OllamaEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -43,7 +40,7 @@ def create_chain():
     ])
 
     llm = ChatOllama(model="mistral", straming=True)
-    chain = create_stuff_documents_chain(
+    qa_chain = create_stuff_documents_chain(
         llm=llm,
         prompt=prompt
     )
@@ -71,16 +68,16 @@ def create_chain():
     )
 
     retrieval_chain = create_retrieval_chain(
-        # retriever,
         history_aware_retriever,
-        chain
+        qa_chain
     )
 
     return retrieval_chain
 
 
-def process_chat(chain, question, chat_history):
-    result = chain.stream({
+def process_chat(chat_chain, question, chat_history):
+    rag_chain = chat_chain.pick("answer")
+    result = rag_chain.stream({
         "chat_history": chat_history,
         "input": question,
     })
@@ -114,13 +111,5 @@ if user_input:
 
     with st.chat_message("AI"):
         response = st.write_stream(process_chat(chain, user_input, chat_history))
-        data = process_chat(chain, user_input, chat_history)
-        print(data)
-        print(list(data))
-        result = ""
-        for item in list(data):
-            result += item["answer"]
-        print(result)
-
     chat_history.append(AIMessage(content=response))
     st.session_state.chat_history = chat_history
