@@ -1,5 +1,5 @@
 from langchain_community.document_loaders import TextLoader
-from langchain.text_splitter import CharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 import git
 import os
 from langchain_chroma import Chroma
@@ -8,7 +8,7 @@ from queue import Queue
 from langchain_community.chat_models import ChatOllama
 from langchain.chains import ConversationalRetrievalChain
 
-allowed_extensions = ['.*', '.md']
+allowed_extensions = ['.*','.md']
 
 
 class Embedder:
@@ -41,6 +41,9 @@ class Embedder:
         root_dir = self.clone_path
         self.docs = []
         for dirpath, dirnames, filenames in os.walk(root_dir):
+            print(dirpath)
+            print(dirnames)
+            print(filenames)
             for file in filenames:
                 file_extension = os.path.splitext(file)[1]
                 if file_extension in allowed_extensions:
@@ -52,7 +55,7 @@ class Embedder:
                         pass
 
     def chunk_files(self):
-        text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=600, chunk_overlap=0)
         self.texts = text_splitter.split_documents(self.docs)
         self.num_texts = len(self.texts)
 
@@ -83,7 +86,7 @@ class Embedder:
         self.extract_all_files()
         self.chunk_files()
         self.db = self.embed_deeplake()
-        search_kwargs = {"k": 3}
+        search_kwargs = {"k": 4}
         self.retriever = self.db.as_retriever(search_kwargs=search_kwargs)
 
     def retrieve_results(self, query):
