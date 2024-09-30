@@ -39,7 +39,7 @@ def create_chain():
         ("human", "{input}")
     ])
 
-    llm = ChatOllama(model="mistral", straming=True)
+    llm = ChatOllama(model="mistral", streaming=True)
     qa_chain = create_stuff_documents_chain(
         llm=llm,
         prompt=prompt
