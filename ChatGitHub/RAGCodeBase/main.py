@@ -7,8 +7,8 @@ st.set_page_config(page_title="AI Coding Assistant", page_icon="🤖")
 st.title("Chat with your code base!")
 
 user_repo = st.text_input(
-        "Please paste your github repository link here 👇:",
-        placeholder="Github URL")
+    "Please paste your github repository link here 👇:",
+    placeholder="Github URL")
 
 if user_repo:
     st.write("Your codebase:", user_repo)

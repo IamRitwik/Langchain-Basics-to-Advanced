@@ -5,7 +5,7 @@ from langchain.chains.history_aware_retriever import create_history_aware_retrie
 from langchain.chains.retrieval import create_retrieval_chain
 from langchain_chroma import Chroma
 from langchain_community.chat_models import ChatOllama
-from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_ollama import OllamaEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -36,15 +36,13 @@ class Embedder:
     def extract_all_files(self):
         root_dir = self.clone_path
         self.docs = []
-        loader = DirectoryLoader(root_dir, show_progress=True, use_multithreading=True)
+        loader = DirectoryLoader(root_dir, glob='**/*.*', show_progress=True, loader_cls=TextLoader)
         self.docs.extend(loader.load_and_split())
 
     def chunk_files(self):
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1500, chunk_overlap=200)
-        for doc in self.docs:
-            print(doc)
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
         self.texts = text_splitter.split_documents(self.docs)
-        # print(self.texts)
+        print(self.texts)
         self.num_texts = len(self.texts)
         print(self.num_texts)
 
