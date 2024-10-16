@@ -8,3 +8,4 @@ backoff==2.2.1
 streamlit==1.38.0
 pypdf==4.3.1
 langchain-text-splitters==0.3.0
+unstructured==0.15.14

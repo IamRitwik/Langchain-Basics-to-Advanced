@@ -24,8 +24,10 @@ https://medium.com/@eric_vaillancourt/mastering-langchain-rag-integrating-chat-h
 https://github.com/bartolli/ollama-bearer-auth
 https://github.com/developersdigest/aws-ec2-cuda-ollama
 https://github.com/badrinathpathak/CRUD-API-Node.js-Express-and-MongoDB
-https://github.com/maitraysuthar/rest-api-nodejs-mongodb
+https://github.com/PrabhaWijera/Spring-Boot-CRUD-Project-With-MySQL-Database-in-Docker
 
 # Ollama
 https://www.youtube.com/watch?v=a329vAPgpaE
 https://www.youtube.com/watch?v=SAhUc9ywIiw
+
+pip install python-magic python-magic-bin unstructured[md]
